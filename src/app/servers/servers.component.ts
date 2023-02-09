@@ -9,9 +9,18 @@ import { Component } from '@angular/core';
 })
 export class ServersComponent {
   allowNewServer = false;
-
+  serverCreationStatus = "No Server!"
+  serverName = "";
   constructor(){
     setTimeout(()=>{this.allowNewServer = true},2000);
   }
 
+  onCreateServer(){
+    this.serverCreationStatus = "Server Created!"
+  }
+
+  onUpdateServerName(event:any){
+    console.log(event);
+    this.serverName = event.target.value;
+  }
 }
